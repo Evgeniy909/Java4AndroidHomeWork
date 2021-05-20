@@ -20,17 +20,23 @@ public class Main {
             randomNumber = rnd.nextInt(10);
 
             for (int n = 0; n < 3; n++) {
-                System.out.println("Угадайте число:");
+                System.out.println("Угадайте число от 0 до 9:");
 
                 inputNumber = scan.nextInt();
 
-                if (inputNumber == randomNumber) {
-                    System.out.println("Вы угадали!");
-                    break;
-                } else if (inputNumber > randomNumber & n <2) {
-                    System.out.println("Загаданное число меньше!");
-                } else if(inputNumber < randomNumber & n <2) {
-                    System.out.println("Загаданное число больше!");
+                if (inputNumber > 9) {
+                    System.out.println("Введённое число больше 9!!!");
+                    n -=1;
+                    continue;
+                }else{
+                    if (inputNumber == randomNumber) {
+                        System.out.println("Вы угадали!");
+                        break;
+                    } else if (inputNumber > randomNumber & n <2) {
+                        System.out.println("Загаданное число меньше!");
+                    } else if(inputNumber < randomNumber & n <2) {
+                        System.out.println("Загаданное число больше!");
+                    }
                 }
             }
             //правильное число
